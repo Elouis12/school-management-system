@@ -19,7 +19,7 @@
 
 ### SETTING UP MYSQL DRIVER
 
-1. download the driver from [here] (https://dbschema.com/jdbc-driver/MySql.html)
+1. download the driver from [here](https://dbschema.com/jdbc-driver/MySql.html)
    - File
    - Project Structure
    - Libraries

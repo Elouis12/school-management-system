@@ -48,6 +48,6 @@ public class LoginController implements Initializable {
             this.dbStatus.setText( "NOT connected" );
         }
 
-        this.comboBox.setItems( FXCollections.observableArrayList( option.values() ) );
+        this.comboBox.setItems( FXCollections.observableArrayList( option.values() ) ); // set the items to the
     }
 }

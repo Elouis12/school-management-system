@@ -43,7 +43,7 @@ public class LoginModel {
 
         try{
 
-            preparedStatement =this.connection.prepareStatement( sql );
+            preparedStatement = this.connection.prepareStatement( sql );
             preparedStatement.setString( 1, user ); //
             preparedStatement.setString( 1, password ); //
             preparedStatement.setString( 1, option ); //
