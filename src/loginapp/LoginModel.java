@@ -41,12 +41,22 @@ public class LoginModel {
 
         String sql = "SELECT * FROM login WHERE username = ? AND password = ? AND division = ?;" ;
 
+        /*  QUESTION MARKS ARE PLACEHOLDERS?
+
+            WE GIVE THEM NUMBERS 1,2,3 OR 0,1,2 OR 4,5,6
+            THAT WAY IT KNOWS WHAT ORDER TO PLACE THEM?
+
+            WE COULD'VE ALSO DONE
+            "SELECT * FROM login WHERE username = " + username + " AND password = " + password + " AND division = " + option + ";" ;
+
+        */
+
         try{
 
             preparedStatement = this.connection.prepareStatement( sql );
             preparedStatement.setString( 1, user ); //
-            preparedStatement.setString( 1, password ); //
-            preparedStatement.setString( 1, option ); //
+            preparedStatement.setString( 2, password ); //
+            preparedStatement.setString( 3, option ); //
 
             resultSet = preparedStatement.executeQuery();
 
@@ -62,6 +72,7 @@ public class LoginModel {
         }catch (SQLException e){
 
             e.printStackTrace();
+
         }finally {
 
             {
