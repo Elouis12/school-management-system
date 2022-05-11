@@ -20,7 +20,7 @@ public class dbConnection {
             Class.forName( /*"org.sqlite.JDBC"*/ "com.mysql.cj.jdbc.Driver"); // setup the connection
             return DriverManager.getConnection( CONN, USERNAME, PASSWORD); // connection string, username, password
 
-        }catch (ClassNotFoundException | SQLException e){
+        }catch ( ClassNotFoundException | SQLException e ){
 
             e.printStackTrace();
         }

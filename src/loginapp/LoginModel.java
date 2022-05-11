@@ -29,12 +29,12 @@ public class LoginModel {
 
     }
 
-    public boolean isDatabaseConnected(){
+    public boolean isDatabaseConnected(){ // lets us know if we're connected to the database
 
         return this.connection != null;
     }
 
-    public boolean isLoggedIn(String user, String password, String option) throws Exception {
+    public boolean isLoggedIn(String user, String password, String option) throws Exception { // if the correct credentials are valid
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

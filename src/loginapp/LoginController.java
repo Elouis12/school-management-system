@@ -46,7 +46,7 @@ public class LoginController implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { // allows us to set text and operate of the javafx items?
 
         if( this.loginModel.isDatabaseConnected() ){
 
