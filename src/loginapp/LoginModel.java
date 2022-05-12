@@ -62,7 +62,7 @@ public class LoginModel {
 
             boolean bool;
 
-            if( resultSet.next() ){
+            if( resultSet.next() ){ // if it it has any results stores it in rows
 
                 return true;
             }
