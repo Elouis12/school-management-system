@@ -21,6 +21,7 @@ public class StudentData { // CLASS TO ADD STUDENTS
         this.EMAIL = new SimpleStringProperty( email );
         this.DATE_OF_BIRTH = new SimpleStringProperty( dateOfBirth );
 
+
     }
 
 
