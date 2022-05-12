@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
@@ -33,7 +32,7 @@ public class LoginController implements Initializable {
     private TextField password; // to access by ID
 
     @FXML
-    private ComboBox<option> comboBox; // to access by ID
+    private ComboBox<LoginComboBoxOption> comboBox; // to access by ID
 
     @FXML
     private Button loginButton; // to access by ID
@@ -57,7 +56,7 @@ public class LoginController implements Initializable {
             this.dbStatus.setText( "NOT connected" );
         }
 
-        this.comboBox.setItems( FXCollections.observableArrayList( option.values() ) ); // set the items to the
+        this.comboBox.setItems( FXCollections.observableArrayList( LoginComboBoxOption.values() ) ); // set the items to the
     }
 
     @FXML
@@ -65,12 +64,12 @@ public class LoginController implements Initializable {
 
         try{
 
-            if( this.loginModel.isLoggedIn( this.username.getText(), this.password.getText(), ( (option) this.comboBox.getValue() ).toString() ) ){
+            if( this.loginModel.isLoggedIn( this.username.getText(), this.password.getText(), ( (LoginComboBoxOption) this.comboBox.getValue() ).toString() ) ){
 
                 Stage loginStage = (Stage) this.loginButton.getScene().getWindow();
                 loginStage.close(); // close the login stage so we can let then display the student stage / scene
 
-                switch (this.comboBox.getValue().toString()) {
+                switch (this.comboBox.getValue().toString()) { // based on if the user picked student or admin
                     case "Student" -> studentLogin(); // to display the student screen
                     case "Admin" -> adminLogin(); // to display the admin screen
                 }
